@@ -32,28 +32,34 @@ public class StringUtil {
 		return result;
 	}	
 
+	// 4. String -> path, 파일명
 
 	/**
-	 * 파일명에서 확장자를 추출
-	 * @param s 경로명 "c:/img/item/p01.jpg
-	 * @return 파일명 p01.jpg
-	 */
-	public static String getFileName(String s) {
-		String result = "";
-		// to do 
-		return result;
-	}
-	/**
-	 * 경로명에서 경로만 추출
-	 * @param s 경로명 "c:/img/item/p01.jpg
-	 * @return 경로 c:/img/item
-	 */
-	public static String getPath(String s) {
-		String result = "";
-		// to do 
-		return result;
-	}
-	
-	// 4. String -> path, 파일명
+	    * 파일명에서 확장자를 추출
+	    * @param s 경로명 "c:/img/item/p01.jpg"
+	    * @return 파일명 p01.jpg
+	    */
+	   
+	   public static String getFileName(String s) {
+	      String result = "";
+//	      int str = s.lastIndexOf("/");
+//	      result = s.substring(str + 5, s.length());
+	      int str = s.lastIndexOf(".");
+	      result = s.substring(str + 1, s.length());
+	      return result;
+	   }
+	   
+	   /**
+	    * 경로명에서 경로만 추출
+	    * @param s 경로명 "c:/img/item/p01.jpg"
+	    * @return 경로 c:/img/item
+	    */
+	   
+	   public static String getPath(String s) {
+	      String result = "";
+	      int str = s.lastIndexOf("/");
+	      result = s.substring(0, str);
+	      return result;
+	   }
 	
 }
