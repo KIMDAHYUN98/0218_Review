@@ -1,11 +1,10 @@
 package jdbc;
 
-import java.lang.reflect.Array;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
 
 /*
  * VO : Value Object == EmpDTO, EmpDO, Emp ...
@@ -22,7 +21,7 @@ public class EmpDAO {
 		EmpVO vo = null;
 		try {
 			conn = JdbcUtil.connect();
-			String sql = "select (EMPLOYEE_ID, "
+			String sql = "select EMPLOYEE_ID, "
 							+ " FIRST_NAME, "
 							+ " LAST_NAME, "
 							+ " EMAIL, "
@@ -32,7 +31,7 @@ public class EmpDAO {
 							+ " SALARY, "
 							+ " COMMISSION_PCT, "
 							+ " MANAGER_ID, "
-							+ " DEPARTMENT_ID) "
+							+ " DEPARTMENT_ID "
 						+ " from employees"
 						+ " order by FIRST_NAME";
 			psmt = conn.prepareStatement(sql);
