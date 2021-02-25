@@ -12,7 +12,8 @@ public class DateUtil {
 	
 	public static Date toDate(String date) {
 		Date result = null;
-		// to do
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		result = result.parse(date);
 		return result;
 	}
 	
